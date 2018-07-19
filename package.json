@@ -1,0 +1,16 @@
+{
+  "name": "jsht5",
+  "description": "protractor+jasmine and protractor+cucumber",
+  "repository": "",
+  "license": "",
+  "devDependencies": {
+    "jasmine": "^3.1.0",
+    "protractor-cucumber-framework": "^3.0.0"
+  },
+  "scripts": {
+    "test": "jasmine Jasmine/protractor.conf.js.js",
+    "prestart-webdriver": "webdriver-manager update",
+    "start-webdriver": "webdriver-manager start",
+    "protractor": "protractor protractor.conf.js"
+  }
+}
