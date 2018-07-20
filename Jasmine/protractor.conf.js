@@ -4,12 +4,18 @@ exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
     spec_dir: "Jasmine",
     specs: 'spec.js',
-    multiCapabilities:[{
-        browserName: 'chrome'
-    }],
+    capabilities: {
+        'browserName': 'chrome',
+        'chromeOptions': {
+            'args': ['disable-infobars']
+        }
+    },
+    highlightDelay: 3000,
 
     onPrepare: function () {
         browser.driver.manage().window().maximize();
+        browser.driver.manage().timeouts().implicitlyWait(200000);
+        browser.waitForAngularEnabled(true);
     },
 
     jasmineNodeOpts: {
