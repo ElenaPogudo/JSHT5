@@ -1,18 +1,23 @@
-'use strict'
+'use strict';
 
 exports.config = {
-    framework: 'jasmine',
     seleniumAddress: 'http://localhost:4444/wd/hub',
-    specs: ['spec.js'],
-
-
+    highlightDelay: 3000,
+    framework: 'custom',
+    frameworkPath: require.resolve('protractor-cucumber-framework'),
+    cucumberOpts: {
+        require: 'Cucumber/features/step_definitions/chairs_steps.js',
+    },
+    specs: ['Cucumber/features/chairs.feature'],
+    capabilities: {
+        'browserName': 'chrome',
+        'chromeOptions': {
+            'args': ['disable-infobars']
+        }
+    },
     onPrepare: function () {
         browser.driver.manage().window().maximize();
-    },
-
-
-
-    jasmineNodeOpts: {
-        showColors: true
+        browser.driver.manage().timeouts().implicitlyWait(20000);
+        browser.waitForAngularEnabled(true);
     }
 }

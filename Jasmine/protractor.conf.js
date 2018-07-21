@@ -1,8 +1,8 @@
-'use strict'
+'use strict';
+
 exports.config = {
     framework: 'jasmine',
     seleniumAddress: 'http://localhost:4444/wd/hub',
-    spec_dir: "Jasmine",
     specs: 'spec.js',
     capabilities: {
         'browserName': 'chrome',
