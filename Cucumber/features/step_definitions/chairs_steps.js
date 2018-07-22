@@ -1,4 +1,4 @@
-const expect = chai.expect;
+const expect = require('chai').expect;
 const Page = require("../pages/chairsPage.js");
 const page = new Page();
 
@@ -31,6 +31,26 @@ var myStepDefinitionsWrapper = function () {
         });
         callback.pending();
     });
+
+    this.When(/^I go to shop now link$/, function (callback) {
+        page.goToShopNowLink();
+        callback.pending();
+    });
+    this.When(/^Choose first sofa$/, function (callback) {
+        page.openSofaLink();
+        callback.pending();
+    });
+    this.Then(/^I see its lite silver color and walnut legs by default$/, function (callback) {
+        page.lookAtDefaultParameters().then((text) => {
+            expect(text).to.eql("Light Silver Walnut");
+        });
+        callback.pending();
+    });
+
+    this.Then(/^I see all parameters$/, function (callback) {
+        page.showParameters();
+        callback.pending();
+    });
 };
-    module.exports = myStepDefinitionsWrapper;
+module.exports = myStepDefinitionsWrapper;
 

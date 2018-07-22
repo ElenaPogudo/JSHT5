@@ -5,14 +5,16 @@ Feature: Tests store.hermanmiller.com
     When I push log in, fill user name and password and submit
     Then I should be logged in
 
-  #Scenario: Navigate to a product and add the same to the User basket
-  #  Given User navigate for Lenovo Laptop
-  #  When Add the laptop to the basket
-  #  Then User basket should display with added item
+  Scenario: Open page of some sofa and make sure if has right default values
+    When I go to shop now link
+    And Choose first sofa
+    Then I see its lite silver color and walnut legs by default
+    And I see all parameters
 
-  Scenario Outline: Search a product and add the first product to the User basket
+
+  Scenario Outline: Add two products to the cart and compare prices
     When I go to the living link and choose chairs
-    When I add "<positions>" chairs to the cart
+    And I add "<positions>" chairs to the cart
     Then I see "<finalPrices>" in cart
 
     Examples:

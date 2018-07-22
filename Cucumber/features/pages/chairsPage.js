@@ -10,11 +10,14 @@ const homePage = element(by.css("img[alt=\"Herman Miller\"]"));
 const loginUser = element(by.css("a.user-account > span"));
 const livingLink = element(by.css("li.has-sub-menu.current > a > span > span.sub-title"));
 const chairsLink = element(by.css("img[alt=\"Chairs\"]"));
-const firstChair = element(by.css("a.name-link > h3"));
+const firstElementOfProduct = element(by.css("a.name-link > h3"));
 const secondChair = element(by.css("li.has-sub-menu.current > a > span > span.sub-title"));
 const addToCart = element(by.css("id=add-to-cart"));
 const cart = element(by.className("mini-cart-button-text"));
 const priceInCart = element(by.css("td.order-value"));
+const shopNowLink = element(by.css("a.button.secondary"));
+const parametersOfSofa = element.all(by.className("selected-swatch"));
+const sofaParameters = element(by.xpath("//*[@id=\"info-section\"]/div/div[9]/div/div[2]/div[1]/div[3]/table/tbody"));
 
 
 class ChairsPage {
@@ -43,14 +46,14 @@ class ChairsPage {
     addChair(number) {
 
         switch (number) {
-            case "1":{
-                browser.findElement(firstChair).click();
+            case "1": {
+                browser.findElement(firstElementOfProduct).click();
                 browser.findElement(addToCart).click();
                 browser.findElement(cart).click();
                 break;
             }
-            case "2":{
-                browser.findElement(firstChair).click();
+            case "2": {
+                browser.findElement(firstElementOfProduct).click();
                 browser.findElement(addToCart).click();
                 browser.back();
                 browser.findElement(secondChair).click();
@@ -64,6 +67,22 @@ class ChairsPage {
     showPrice() {
         this.highlightElement(priceInCart);
         return priceInCart.getText();
+    }
+
+    goToShopNowLink() {
+        return browser.findElement(shopNowLink).click()
+    }
+
+    openSofaLink() {
+        return browser.findElement(firstElementOfProduct).click();
+    }
+
+    lookAtDefaultParameters() {
+        return parametersOfSofa.getText();
+    }
+
+    showParameters() {
+        return this.highlightElement(sofaParameters);
     }
 
     highlightElement(el) {

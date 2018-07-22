@@ -6,9 +6,9 @@ exports.config = {
     framework: 'custom',
     frameworkPath: require.resolve('protractor-cucumber-framework'),
     cucumberOpts: {
-        require: 'Cucumber/features/step_definitions/chairs_steps.js',
+        require: 'Cucumber/features/step_definitions/*steps.js',
     },
-    specs: ['Cucumber/features/chairs.feature'],
+    specs: ['Cucumber/features/*.feature'],
     capabilities: {
         'browserName': 'chrome',
         'chromeOptions': {
@@ -17,7 +17,7 @@ exports.config = {
     },
     onPrepare: function () {
         browser.driver.manage().window().maximize();
-        browser.driver.manage().timeouts().implicitlyWait(20000);
+        browser.driver.manage().timeouts().implicitlyWait(3000);
         browser.waitForAngularEnabled(true);
     }
 }
