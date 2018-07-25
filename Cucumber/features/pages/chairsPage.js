@@ -1,23 +1,22 @@
 'use strict';
 
-
 const url = 'http://store.hermanmiller.com';
-const loginButton = element(by.css("a[title=\"User: Login /  Register\"] > span"));
-const usernameField = element(by.css("id=dwfrm_login_username_d0pfraitgcut"));
-const passwordField = element(by.css("id=dwfrm_login_password_d0btfdmzchvt"));
-const submitLoginButton = element(by.css("name=dwfrm_login_login"));
-const homePage = element(by.css("img[alt=\"Herman Miller\"]"));
-const loginUser = element(by.css("a.user-account > span"));
-const livingLink = element(by.css("li.has-sub-menu.current > a > span > span.sub-title"));
-const chairsLink = element(by.css("img[alt=\"Chairs\"]"));
-const firstElementOfProduct = element(by.css("a.name-link > h3"));
-const secondChair = element(by.css("li.has-sub-menu.current > a > span > span.sub-title"));
-const addToCart = element(by.css("id=add-to-cart"));
-const cart = element(by.className("mini-cart-button-text"));
-const priceInCart = element(by.css("td.order-value"));
-const shopNowLink = element(by.css("a.button.secondary"));
-const parametersOfSofa = element.all(by.className("selected-swatch"));
-const sofaParameters = element(by.xpath("//*[@id=\"info-section\"]/div/div[9]/div/div[2]/div[1]/div[3]/table/tbody"));
+const loginButton = element(by.css('a[title="User: Login /  Register"] > span'));
+const usernameField = element(by.css('id=dwfrm_login_username_d0pfraitgcut'));
+const passwordField = element(by.css('id=dwfrm_login_password_d0btfdmzchvt'));
+const submitLoginButton = element(by.css('name=dwfrm_login_login'));
+const homePage = element(by.css('img[alt="Herman Miller"]'));
+const loginUser = element(by.css('a.user-account > span'));
+const livingLink = element(by.css('li.has-sub-menu.current > a > span > span.sub-title'));
+const chairsLink = element(by.css('img[alt="Chairs"]'));
+const firstElementOfProduct = element(by.css('a.name-link > h3'));
+const secondChair = element(by.css('li.has-sub-menu.current > a > span > span.sub-title'));
+const addToCart = element(by.css('id=add-to-cart'));
+const cart = element(by.className('mini-cart-button-text'));
+const priceInCart = element(by.css('td.order-value'));
+const shopNowLink = element(by.css('a.button.secondary'));
+const parametersOfSofa = element.all(by.className('selected-swatch'));
+const sofaParameters = element(by.xpath('//*[@id="info-section"]/div/div[9]/div/div[2]/div[1]/div[3]/table/tbody'));
 
 
 class ChairsPage {
@@ -44,23 +43,22 @@ class ChairsPage {
     }
 
     addChair(number) {
-
         switch (number) {
-            case "1": {
-                browser.findElement(firstElementOfProduct).click();
-                browser.findElement(addToCart).click();
-                browser.findElement(cart).click();
-                break;
-            }
-            case "2": {
-                browser.findElement(firstElementOfProduct).click();
-                browser.findElement(addToCart).click();
-                browser.back();
-                browser.findElement(secondChair).click();
-                browser.findElement(addToCart).click();
-                browser.findElement(cart).click();
-                break;
-            }
+        case '1': {
+            browser.findElement(firstElementOfProduct).click();
+            browser.findElement(addToCart).click();
+            browser.findElement(cart).click();
+            break;
+        }
+        case '2': {
+            browser.findElement(firstElementOfProduct).click();
+            browser.findElement(addToCart).click();
+            browser.back();
+            browser.findElement(secondChair).click();
+            browser.findElement(addToCart).click();
+            browser.findElement(cart).click();
+            break;
+        }
         }
     }
 
@@ -70,7 +68,7 @@ class ChairsPage {
     }
 
     goToShopNowLink() {
-        return browser.findElement(shopNowLink).click()
+        return browser.findElement(shopNowLink).click();
     }
 
     openSofaLink() {
@@ -87,18 +85,17 @@ class ChairsPage {
 
     highlightElement(el) {
         var bg;
-        return el.getCssValue("backgroundColor").then(function (col) {
+        return el.getCssValue('backgroundColor').then(function (col) {
             bg = col;
         }).then(function () {
-            return browser.executeScript("arguments[0].style.backgroundColor = '" + "red" + "'", el)
+            return browser.executeScript('arguments[0].style.backgroundColor = \'' + 'red' + '\'', el);
         }).then(function () {
             return browser.sleep(1000);
         }).then(function () {
-            console.log('bg', bg);
-            return browser.executeScript("arguments[0].style.backgroundColor = '" + bg + "'", el);
+            return browser.executeScript('arguments[0].style.backgroundColor = "' + bg + '"', el);
         }).then(function () {
             return browser.sleep(1000);
-        })
+        });
     }
 }
 

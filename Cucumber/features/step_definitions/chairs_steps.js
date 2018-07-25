@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const Page = require("../pages/chairsPage.js");
+const Page = require('../pages/chairsPage.js');
 const page = new Page();
 
 var myStepDefinitionsWrapper = function () {
@@ -8,7 +8,7 @@ var myStepDefinitionsWrapper = function () {
         callback.pending();
     });
     this.When(/^I push log in, fill user name and password and submit$/, function (callback) {
-        page.login('a675188@nwytg.net', 'Password1')
+        page.login('a675188@nwytg.net', 'Password1');
         callback.pending();
     });
     this.Then(/^I should be logged in$/, function (callback) {
@@ -42,7 +42,7 @@ var myStepDefinitionsWrapper = function () {
     });
     this.Then(/^I see its lite silver color and walnut legs by default$/, function (callback) {
         page.lookAtDefaultParameters().then((text) => {
-            expect(text).to.eql("Light Silver Walnut");
+            expect(text).to.eql('Light Silver Walnut');
         });
         callback.pending();
     });

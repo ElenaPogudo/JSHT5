@@ -1,4 +1,4 @@
-Feature: Tests store.hermanmiller.com
+Feature: Tests "store.hermanmiller.com"
 
   Background: User is Logged In
     Given I navigate to the main page
@@ -19,7 +19,7 @@ Feature: Tests store.hermanmiller.com
 
     Examples:
       | positions | finalPrices |
-      | 1         | $295.00     |
-      | 2         | $640.00     |
+      |     1     |   $295.00   |
+      |     2     |   $640.00   |
 
 

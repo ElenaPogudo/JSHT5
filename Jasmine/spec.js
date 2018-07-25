@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 describe('lego homepage', function () {
      const mainLogo = element(by.className('l-gh__logo  l-logo'));
@@ -14,7 +14,7 @@ describe('lego homepage', function () {
         browser.get('https://www.lego.com/en-us/');
     });
 
-    fit('should have a correct title', () => {
+    it('should have a correct title', () => {
         expect(browser.getTitle()).toEqual('LEGO.com US - Inspire and develop the builders of tomorrow');
     });
 
@@ -26,7 +26,7 @@ describe('lego homepage', function () {
         expect(logIn.getAttribute('text')).toEqual('Log in');
     });
 
-    fit('should go to russian version', () => {
+    it('should go to russian version', () => {
         languageButton.click();
         RusLanguageButton.click();
         expect(browser.getTitle()).toEqual('LEGO.com RU — Вдохновлять и учить строителей будущего.');
