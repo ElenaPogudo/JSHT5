@@ -20,12 +20,12 @@ class legoPage {
         return browser.getTitle();
     }
 
-    getSomeAttribute(alias, attribute){
+    getSomeAttribute(alias, attribute) {
         const element = elementHelper.getPageObjectElement(alias);
         return element.getAttribute(attribute);
     }
 
-    isElementPresentOnPage(alias){
+    isElementPresentOnPage(alias) {
         return elementHelper.getPageObjectElement(alias).isPresent();
     }
 }

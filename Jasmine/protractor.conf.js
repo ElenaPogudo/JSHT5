@@ -1,4 +1,5 @@
 'use strict';
+const Jasmine2HtmlReporter = require('protractor-jasmine2-html-reporter');
 
 exports.config = {
     framework: 'jasmine',
@@ -12,13 +13,19 @@ exports.config = {
     },
     highlightDelay: 3000,
 
-    onPrepare: function () {
+    onPrepare: () => {
+        jasmine.getEnv().addReporter(
+            new Jasmine2HtmlReporter({
+                savePath: './reports',
+                takeScreenshotsOnlyOnFailures: true
+            })
+        );
         browser.driver.manage().window().maximize();
         browser.driver.manage().timeouts().implicitlyWait(200000);
         browser.waitForAngularEnabled(true);
     },
 
     jasmineNodeOpts: {
-        showColors: true
+        print: () => { }
     }
 };

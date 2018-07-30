@@ -6,9 +6,8 @@ exports.config = {
     framework: 'custom',
     frameworkPath: '../node_modules/protractor-cucumber-framework/',
     cucumberOpts: {
-        steps: ['../Cucumber/features/step_definitions/chairs_steps.js'],
-        strict: true,
-        timeout: '10000',
+        require: ['../Cucumber/features/step_definitions/chairs_steps.js'],
+        format: "summary"
     },
     specs: ['../Cucumber/features/chairs.feature'],
     capabilities: {

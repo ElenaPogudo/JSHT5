@@ -1,4 +1,4 @@
-const chairsPageObject = require('./Cucumber/features/PO/chairsPageObject.js');
+const chairsPageObject = require('../PO/chairsPageObject.js');
 
 class ElementHelper {
 

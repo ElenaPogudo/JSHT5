@@ -1,6 +1,6 @@
 'use strict';
 
-const elementHelper = require('./Cucumber/features/PO/elementHelper.js');
+const elementHelper = require('../PO/elementHelper.js');
 
 class ChairsPage {
 
