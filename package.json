@@ -15,7 +15,7 @@
     "prestart-webdriver": "webdriver-manager update",
     "start-webdriver": "webdriver-manager start",
     "jasmine-protractor-tests": "protractor Jasmine/protractor.conf.js",
-    "cucumber-protractor-tests": "protractor ../JSHT5/Cucumber/protractor.conf.js"
+    "cucumber-protractor-tests": "protractor Cucumber/protractor.conf.js"
   },
   "devDependencies": {
     "eslint": "^5.2.0"
