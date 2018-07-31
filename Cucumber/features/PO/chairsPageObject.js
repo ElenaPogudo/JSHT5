@@ -4,22 +4,23 @@ class chairsPageObject {
         this.elements = {
             // elements for chairsPage
             LeftMenuButton: 'div.nav-inner__menu-button',
-            UsernameField: 'id=dwfrm_login_username_d0pfraitgcut',
-            PasswordField: 'id=dwfrm_login_password_d0btfdmzchvt',
-            SubmitLoginButton: 'name=dwfrm_login_login',
-            HomePage: 'img[alt="Herman Miller"]',
-            TextInLoginForm: 'a.user-account > span',
-            ShopNowLink: 'a.button.secondary',
-            FirstElementOfProducts: 'a.name-link > h3',
-            LivingLink: 'li.has-sub-menu.current > a > span > span.sub-title',
-            ChairsLink: 'img[alt="Chairs"]',
-            FirstChair: 'a.name-link > h3',
-            SecondChair: 'li.has-sub-menu.current > a > span > span.sub-title',
-            AddToCart: 'id=add-to-cart',
-            Cart: 'className=mini-cart-button-text',
-            PriceInCart: 'td.order-value',
-            SofaColor: 'className=selected-swatch',
-            AllParameters: 'div.product-specification-inner'
+            Players: 'body > main > nav > section > div:nth-child(15) > h4',
+            PlayersHome: 'body > main > nav > section > section:nth-child(16) > ul > li:nth-child(1) > a',
+            HomePage: 'body > main > div.nav-container > div > nav > div:nth-child(2) > a',
+
+            Teams: 'div.nav-inner__menu-item > a[href="/teams/"]',
+            SeasonLeaderByPointsPerGame: 'td.category-table__text > a',
+            Profile: 'div.toggle-nav-component__button > a',
+            Tracking: 'body > main > div.stats-container__inner > div > div > div.row > div > nav-dropdown > nav > section:nth-child(2) > ul > li:nth-child(6) > a > span',
+            TotalsGP: 'body > main > div.stats-container__inner > div > div > div.row > div > div > div > nba-stat-table:nth-child(8) > div.nba-stat-table > div.nba-stat-table__overflow > table > tbody > tr:nth-child(1) > td:nth-child(2)',
+            TotalsFREQ: 'body > main > div.stats-container__inner > div > div > div.row > div > div > div > nba-stat-table:nth-child(8) > div.nba-stat-table > div.nba-stat-table__overflow > table > tbody > tr:nth-child(1) > td:nth-child(3)',
+            TotalsFGM: 'body > main > div.stats-container__inner > div > div > div.row > div > div > div > nba-stat-table:nth-child(8) > div.nba-stat-table > div.nba-stat-table__overflow > table > tbody > tr:nth-child(1) > td:nth-child(4)',
+
+            AllTimeLeaders: 'div.nav-inner__menu-item > a[href="/alltime/"]',
+            AllTimeSummary: 'a[ng-class="{ active: showBeta }"]',
+            General: 'a[data-type-beta="general"]',
+            BestPlayer: 'div.nba-stat-table__overflow > table > tbody > tr[index="0"]',
+            BestPlayerName:'div.nba-stat-table__overflow > table > tbody > tr[index="0"] > td[class="player"]'
 
         };
     }

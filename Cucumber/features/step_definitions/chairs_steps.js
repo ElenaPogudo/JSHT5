@@ -2,33 +2,28 @@ const expect = require('chai').expect;
 const Page = require('../pages/chairsPage.js');
 const page = new Page();
 
-const myStepDefinitionsWrapper = function() {
 
-    this.Given(/^I open "([^"]*)"$/, (url, callback) => {
-        page.get(url);
-        callback(null, 'pending');
+const myStepDefinitionsWrapper = function () {
 
+
+    this.Given(/^I open "([^"]*)"$/, {timeout: 60 * 1000}, (url) => {
+        return page.get(url);
     });
 
-    this.When(/^I click link "([^"]*)"$/, (alias, callback) => {
-        page.clickLink(alias);
-        callback(null, 'pending');
+    this.When(/^I click link "([^"]*)"$/, {timeout: 60 * 1000}, (alias) => {
+        return page.clickLink(alias);
     });
 
-    this.When(/^I fill "([^"]*)" with "([^"]*)"$/, (alias, text, callback) => {
-        page.fillField(alias, text);
-        callback(null, 'pending');
+    this.Then(/^I see "([^"]*)"$/, {timeout: 60 * 1000}, (alias) => {
+        return page.showElement(alias);
     });
 
-    this.Then(/^I see "([^"]*)"$/, (alias, callback) => {
-        page.showElement(alias);
-        callback(null, 'pending');
-    });
-
-    this.Then(/^I should see that "([^"]*)" equal "([^"]*)"$/, (alias, text, callback) => {
-        expect(text).to.eql(page.getTextOfElement(alias));
-        callback(null, 'pending');
+    this.Then(/^I should see that "([^"]*)" equal "([^"]*)"$/, {timeout: 60 * 1000}, (alias, expText) => {
+       return page.getTextOfElement(alias).then((realText) => {
+            return expect(realText).to.eql(expText);
+        });
     });
 };
+
 module.exports = myStepDefinitionsWrapper;
 

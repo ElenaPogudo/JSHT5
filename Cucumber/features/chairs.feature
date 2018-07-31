@@ -1,34 +1,36 @@
 Feature: Tests "https://stats.nba.com/"
 
-  Background: User is Logged In
+  Background: Open Players Home and go back to Home Page
     Given I open "https://stats.nba.com/"
     When I click link "LeftMenuButton"
     And I click link "Players"
     And I click link "PlayersHome"
-    And I fill "SearchField" with "playerName"
-    And I click link "Search"
-
     And I click link "HomePage"
-    Then I should see that "TextInLoginForm" equal "My Account"
-
-  Scenario: Open page of some sofa and make sure if has right default values
-    When I click link "ShopNowLink"
-    And I click link "FirstElementOfProducts"
-    Then I should see that "SofaColor" equal "Light Silver"
-    And I see "AllParameters"
 
 
-  Scenario Outline: Add two products to the cart and compare prices
-    When I click link "LivingLink"
-    And I click link "ChairsLink"
-    And I click link "<product>"
-    And I click link "AddToCart"
-    And I click link "Cart"
-    Then I should see that "PriceInCart" equal "<finalPrices>"
+  Scenario Outline: Take a look at the best team of season and its achievements
+    When I click link "Teams"
+    And I click link "SeasonLeaderByPointsPerGame"
+    And I click link "Profile"
+    And I click link "Tracking"
+    Then I should see that "<Field>" equal "<FieldValue>"
 
     Examples:
-      | product      | finalPrices |
-      | First Chair  | $295.00     |
-      | Second Chair | $375.00     |
+      | Field      | FieldValue |
+      | TotalsGP   | 82         |
+      | TotalsFREQ | 100%       |
+      | TotalsFGM  | 42.7       |
+
+
+  Scenario:
+    When I click link "AllTimeLeaders"
+    And I click link "AllTimeSummary"
+    And I click link "General"
+    Then I should see that "BestPlayerName" equal "James Harden"
+
+
+
+
+
 
 

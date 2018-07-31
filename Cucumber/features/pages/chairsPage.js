@@ -12,28 +12,13 @@ class ChairsPage {
         return elementHelper.getPageObjectElement(alias).click();
     }
 
-    fillField(alias, text) {
-        return elementHelper.getPageObjectElement(alias).sendKeys(text);
-    }
-
     getTextOfElement(alias) {
-        return elementHelper.getPageObjectElement(alias).getText();
+         return elementHelper.getPageObjectElement(alias).getText();
     }
 
     showElement(alias) {
         const element = elementHelper.getPageObjectElement(alias);
-        return this.highlightElement(element);
-    }
-
-    highlightElement(el) {
-        let bg;
-        return el.getCssValue('backgroundColor').then( (col) => {
-            bg = col;
-        }).then( () => {
-            return browser.executeScript(`arguments[0].style.backgroundColor = red`, el);
-        }).then( () => {
-            return browser.executeScript(`arguments[0].style.backgroundColor = "${bg}"`, el);
-        });
+        return console.log(element);
     }
 }
 
