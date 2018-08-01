@@ -7,7 +7,7 @@ const logger = winston.createLogger({
             filename: 'Jasmine/logs/myLogsForJasmine.log',
             timestamp: () => {
                 let currentMoment = new Date(Date.now());
-                return currentMoment.toLocaleString('ru', { timeZone: 'Europe/Minsk' });
+                return currentMoment.toString;
             }
         }),
         new (winston.transports.File)({
@@ -18,4 +18,4 @@ const logger = winston.createLogger({
     ]
 });
 
-module.exports = { logger };
+module.exports = {logger};

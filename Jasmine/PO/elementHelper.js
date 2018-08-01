@@ -6,6 +6,7 @@ class ElementHelper {
         const selector = legoPageObject.elements[alias];
         return element(by.css(selector));
     }
+
     getPageObjectElements(alias) {
         const selector = legoPageObject.elements[alias];
         return element.all(by.css(selector));

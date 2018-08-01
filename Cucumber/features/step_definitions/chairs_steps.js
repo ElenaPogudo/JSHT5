@@ -19,7 +19,7 @@ const myStepDefinitionsWrapper = function () {
 
     this.Then(/^I should see that "([^"]*)" equal "([^"]*)"$/, {timeout: 60 * 1000}, (alias, expText) => {
         logger.info(`I should see that text in element ${alias} equal to ${expText} `);
-       return page.getTextOfElement(alias).then((realText) => {
+        return page.getTextOfElement(alias).then((realText) => {
             return expect(realText).to.eql(expText);
         });
     });

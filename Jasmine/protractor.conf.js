@@ -6,9 +6,9 @@ exports.config = {
     seleniumAddress: 'http://localhost:4444/wd/hub',
     specs: 'spec.js',
     capabilities: {
-        'browserName': 'chrome',
-        'chromeOptions': {
-            'args': ['disable-infobars']
+        browserName: 'chrome',
+        chromeOptions: {
+            args: ['disable-infobars']
         }
     },
     highlightDelay: 3000,
@@ -26,6 +26,7 @@ exports.config = {
     },
 
     jasmineNodeOpts: {
-        print: () => { }
+        print: () => {
+        }
     }
 };

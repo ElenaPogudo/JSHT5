@@ -7,7 +7,7 @@ const logger = winston.createLogger({
             filename: 'Cucumber/logs/myLogsForCucumber.log',
             timestamp: () => {
                 let currentMoment = new Date(Date.now());
-                return currentMoment.toLocaleString('ru', { timeZone: 'Europe/Minsk' });
+                return currentMoment.format('YYYY-MM-DD HH:mm:ss');
             }
         }),
         new (winston.transports.File)({
@@ -18,4 +18,4 @@ const logger = winston.createLogger({
     ]
 });
 
-module.exports = { logger };
+module.exports = {logger};

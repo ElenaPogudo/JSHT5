@@ -2,12 +2,10 @@
 
 const Page = require('./PO/legoPage.js');
 const page = new Page();
-//const logger = require('logger').logger;
 
 describe('lego homepage', () => {
 
     it('should have a correct title', () => {
-        //logger.info(``);
         page.get('https://www.lego.com/en-us/');
         expect(page.getTitle()).toEqual('LEGO.com US - Inspire and develop the builders of tomorrow');
     });
@@ -46,7 +44,7 @@ describe('lego homepage', () => {
     });
 });
 
-describe('lego products page', () =>{
+describe('lego products page', () => {
 
     it('should contain word LEGO in title', () => {
         page.get('https://www.lego.com/en-us/products');

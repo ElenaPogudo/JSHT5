@@ -17,7 +17,7 @@ class ChairsPage {
 
     getTextOfElement(alias) {
         logger.info(`Taking text from element ${alias}`);
-         return elementHelper.getPageObjectElement(alias).getText();
+        return elementHelper.getPageObjectElement(alias).getText();
     }
 
 }

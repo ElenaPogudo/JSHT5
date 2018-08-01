@@ -20,7 +20,7 @@ class chairsPageObject {
             AllTimeSummary: 'a[ng-class="{ active: showBeta }"]',
             General: 'a[data-type-beta="general"]',
             BestPlayer: 'div.nba-stat-table__overflow > table > tbody > tr[index="0"]',
-            BestPlayerName:'div.nba-stat-table__overflow > table > tbody > tr[index="0"] > td[class="player"]'
+            BestPlayerName: 'div.nba-stat-table__overflow > table > tbody > tr[index="0"] > td[class="player"]'
 
         };
     }
