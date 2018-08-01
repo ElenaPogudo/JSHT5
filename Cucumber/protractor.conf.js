@@ -8,37 +8,37 @@ exports.config = {
     framework: 'custom',
     frameworkPath: '../node_modules/protractor-cucumber-framework/',
     cucumberOpts: {
-        require: ['../Cucumber/features/step_definitions/chairs_steps.js'],
+        require: ['../Cucumber/features/step_definitions/NBA_steps.js'],
         format: 'summary'
     },
-    specs: ['../Cucumber/features/chairs.feature'],
+    specs: ['../Cucumber/features/NBA.feature'],
     capabilities: {
-        browserName: 'chrome',
-        chromeOptions: {
-            args: ['disable-infobars']
+        'browserName': 'chrome',
+        'chromeOptions': {
+            'args': ['disable-infobars']
         }
     },
     onPrepare: function () {
         browser.driver.manage().window().maximize();
         browser.waitForAngularEnabled(true);
-    },
-    onCleanUp: function () {
-        const reporter = require("simple-cucumber-html-reporter");
-        reporter.generate({
-            disableLog: true,
-            jsonDir: "Cucumber/reports/",
-            reportPath: "Cucumber/reports/",
-            metadata: {
-                browser: {
-                    name: "chrome",
-                    version: "67"
-                },
-                device: "Local test machine",
-                platform: {
-                    name: "windows",
-                    version: "win10"
-                }
-            }
-        });
+     },
+     onCleanUp: function () {
+         const reporter = require("simple-cucumber-html-reporter");
+         reporter.generate({
+             disableLog: true,
+             jsonDir: "Cucumber/reports/",
+             reportPath: "Cucumber/reports/",
+             metadata: {
+                 browser: {
+                     name: "chrome",
+                     version: "67"
+                 },
+                 device: "Local test machine",
+                 platform: {
+                     name: "windows",
+                     version: "win10"
+                 }
+             }
+         });
     }
 };

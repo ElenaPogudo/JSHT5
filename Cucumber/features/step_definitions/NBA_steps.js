@@ -1,5 +1,5 @@
 const expect = require('chai').expect;
-const Page = require('../pages/chairsPage.js');
+const Page = require('../pages/NBAPage.js');
 const page = new Page();
 const logger = require('../../logger').logger;
 

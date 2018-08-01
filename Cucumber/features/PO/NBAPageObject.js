@@ -1,8 +1,8 @@
-class chairsPageObject {
+class NBAPageObject {
 
     constructor() {
         this.elements = {
-            // elements for chairsPage
+            // elements for NBAPage
             LeftMenuButton: 'div.nav-inner__menu-button',
             Players: 'body > main > nav > section > div:nth-child(15) > h4',
             PlayersHome: 'body > main > nav > section > section:nth-child(16) > ul > li:nth-child(1) > a',
@@ -26,4 +26,4 @@ class chairsPageObject {
     }
 }
 
-module.exports = new chairsPageObject();
+module.exports = new NBAPageObject();

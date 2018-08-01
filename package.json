@@ -21,7 +21,8 @@
     "start-webdriver": "webdriver-manager start",
     "jasmine-protractor-tests": "protractor Jasmine/protractor.conf.js",
     "cucumber-protractor-tests": "protractor Cucumber/protractor.conf.js",
-    "gulp": "gulp"
+    "gulp": "gulp",
+    "test" : "npm run gulp test"
   },
   "devDependencies": {
     "eslint": "^5.2.0",

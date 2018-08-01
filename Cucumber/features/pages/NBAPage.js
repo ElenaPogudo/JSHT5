@@ -3,7 +3,7 @@
 const elementHelper = require('../PO/elementHelper.js');
 const logger = require('../../logger').logger;
 
-class ChairsPage {
+class NBAPage {
 
     get(url) {
         logger.info(`Opening ${url} page`);
@@ -22,4 +22,4 @@ class ChairsPage {
 
 }
 
-module.exports = ChairsPage;
+module.exports = NBAPage;
