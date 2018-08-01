@@ -16,7 +16,7 @@ exports.config = {
     onPrepare: () => {
         jasmine.getEnv().addReporter(
             new Jasmine2HtmlReporter({
-                savePath: './reports',
+                savePath: './Jasmine/reports',
                 takeScreenshotsOnlyOnFailures: true
             })
         );

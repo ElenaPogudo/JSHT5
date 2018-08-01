@@ -1,25 +1,25 @@
 'use strict';
 
 const elementHelper = require('../PO/elementHelper.js');
+const logger = require('../../logger').logger;
 
 class ChairsPage {
 
     get(url) {
+        logger.info(`Opening ${url} page`);
         return browser.get(url);
     }
 
     clickLink(alias) {
+        logger.info(`Clicking ${alias} link`);
         return elementHelper.getPageObjectElement(alias).click();
     }
 
     getTextOfElement(alias) {
+        logger.info(`Taking text from element ${alias}`);
          return elementHelper.getPageObjectElement(alias).getText();
     }
 
-    showElement(alias) {
-        const element = elementHelper.getPageObjectElement(alias);
-        return console.log(element);
-    }
 }
 
 module.exports = ChairsPage;
